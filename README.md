@@ -21,10 +21,9 @@ Power source should be micro usb or similar.
     ```
     $ git clone https://github.com/takeyamayuki/actuator-server.git
     ```
-2. Define `ssid`, `password` of your wifi router by creating header file.
+2. Define `ssid`, `password` of your wifi router by creating your own header file.
     ```sh
-    $ mkdir src/ssid_define.h
-    $ nano src/ssid_define.h
+    $ vi src/ssid_define.h
     ``` 
     Add the following statement to ssid_define.h
     ```cpp
