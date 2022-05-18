@@ -20,7 +20,20 @@ Power source should be micro usb or similar.
     ```
     $ git clone https://github.com/takeyamayuki/actuator-server.git
     ```
-2. Change `ssid`, `password` in [main.cpp](src/main.cpp) to your wifi router password and ssid.  
+2. Define `ssid`, `password` of your wifi router by creating header file.
+    ```sh
+    $ mkdir src/ssid_define.h
+    $ nano src/ssid_define.h
+    ``` 
+    ```cpp
+    #ifndef _SSID_DEFINE_
+    #define _SSID_DEFINE_
+
+    #define MY_SSID "your ssid here"
+    #define MY_SSID_PASS "your ssid password here"
+
+    #endif
+    ```
 3. Change `upload_port`, `monitor_port` in [platformio.ini](platformio.ini) to your own.
 4. Build and upload using platformIO.
 

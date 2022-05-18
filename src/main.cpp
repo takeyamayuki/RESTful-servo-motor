@@ -3,6 +3,7 @@
 #include <WebServer.h>
 #include <ESP32Servo.h>
 #include <ESPmDNS.h>
+#include <ssid_define.h>
 
 Servo servo1; // create four servo objects
 const int servo1Pin = 15;
@@ -11,8 +12,8 @@ int minUs = 0;
 int maxUs = 5000;
 bool to0_flag = false;
 
-const char *ssid = "XXXX";     // 自分のSSIDに書き換える
-const char *password = "XXXX"; // 自分のパスワードに書き換える
+const char *ssid = MY_SSID;     // 自分のSSIDに書き換える
+const char *password = MY_SSID_PASS; // 自分のパスワードに書き換える
 WebServer server(80);
 String target = "0"; // この変数をPOSTメソッドで書き換える
 
