@@ -1,9 +1,9 @@
 # actuator-server
 
 ## parts
-- [MH-ET Live Minikit for ESP32](https://ja.aliexpress.com/item/32815530502.html?spm=a2g0o.order_list.0.0.1b65585aAj7Hnv&gatewayAdapt=glo2jpn)(you need to install driver)  
+- [MH-ET Live Minikit for ESP32](https://ja.aliexpress.com/item/32815530502.html?spm=a2g0o.order_list.0.0.1b65585aAj7Hnv&gatewayAdapt=glo2jpn) (you need to install driver)  
     Any microcontroller board can be used if it has esp32
-- [SG90](https://akizukidenshi.com/catalog/g/gM-08761/)
+- [SG90 servo motor](https://akizukidenshi.com/catalog/g/gM-08761/)
 - micro usb cable
 
 ## circuits
@@ -25,6 +25,7 @@ Power source should be micro usb or similar.
     $ mkdir src/ssid_define.h
     $ nano src/ssid_define.h
     ``` 
+    Add the following statement to ssid_define.h
     ```cpp
     #ifndef _SSID_DEFINE_
     #define _SSID_DEFINE_
@@ -65,6 +66,8 @@ $ curl 192.168.0.28 -X PUT -H "Content-Type: text/plain" -d "0"
 $ curl {your IP address here}
 ```
 or you can browse current servo angle by using browser.
+<img width="792" alt="スクリーンショット 2022-05-18 午後5 19 51" src="https://user-images.githubusercontent.com/22733958/169011735-fc1e0e40-9b51-48f4-82f2-e8c700f44f8a.png">
+
 
 
 Writing {your IP address} as `esp32.local` works, but it is slow.
