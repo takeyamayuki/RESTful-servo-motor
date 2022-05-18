@@ -11,6 +11,8 @@ const int servo1Pin = 15;
 int minUs = 0;
 int maxUs = 5000;
 bool to0_flag = false;
+int angle = 60;
+int angle0 = 5;
 
 const char *ssid = MY_SSID;     // 自分のSSIDに書き換える
 const char *password = MY_SSID_PASS; // 自分のパスワードに書き換える
@@ -28,8 +30,8 @@ void sg90_switch(int k)
     if (status > 15) to0_flag = true; //現在30なので0に持っていく
     else if (status < 15) to0_flag = false; //現在0なので30に持っていく
     // servo.write
-    if (to0_flag) servo1.write(1);
-    else servo1.write(30);
+    if (to0_flag) servo1.write(angle0);
+    else servo1.write(angle);
   }
   else
   {
