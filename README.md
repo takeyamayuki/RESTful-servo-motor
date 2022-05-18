@@ -54,7 +54,7 @@ $ curl 192.168.0.28 -X PUT -H "Content-Type: text/plain" -d "120"
 `SwitchBot mode` (angle=0)  
 
 ```sh
-# a servo motor only goes back and forth between 0° and 30°.
+# Each time the following command is sent, the servo motor moves back and forth between angle and angle0
 $ curl {your IP address here} -X PUT -H "Content-Type: text/plain" -d "0"
 # e.g.
 $ curl 192.168.0.28 -X PUT -H "Content-Type: text/plain" -d "0"
