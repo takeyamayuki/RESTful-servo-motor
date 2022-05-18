@@ -63,8 +63,8 @@ In the homebridge config editor, add the following to the `accessories` section:
     {
         "accessory": "CMD",
         "name": "light",
-        "on_cmd": "curl 192.168.0.28 -X PUT -H 'Content-Type: text/plain' -d '0'",
-        "off_cmd": "curl 192.168.0.28 -X PUT -H 'Content-Type: text/plain' -d '0'"
+        "on_cmd": "curl esp32.local -X PUT -H 'Content-Type: text/plain' -d '0'",
+        "off_cmd": "curl esp32.local -X PUT -H 'Content-Type: text/plain' -d '0'"
     }
 ]
 ```
