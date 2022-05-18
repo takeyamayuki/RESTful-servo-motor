@@ -16,7 +16,7 @@ const char *password = "XXXX"; // 自分のパスワードに書き換える
 WebServer server(80);
 String target = "0"; // この変数をPOSTメソッドで書き換える
 
-// mode=true:0°,30°のスイッチ, mode=fale:自由角度への移動
+// k=0:0°,30°のスイッチ, k!=0:自由角度への移動
 void sg90_switch(int k)
 {
   // k=0:switchbot mode, k!=0:任意角度への移動
