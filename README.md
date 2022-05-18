@@ -1,4 +1,4 @@
-# actuator-server
+# RESTful-servo-motor
 
 ## parts
 - [MH-ET Live Minikit for ESP32](https://ja.aliexpress.com/item/32815530502.html?spm=a2g0o.order_list.0.0.1b65585aAj7Hnv&gatewayAdapt=glo2jpn) (you need to install driver)  
