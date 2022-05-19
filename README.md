@@ -19,10 +19,11 @@ Power source should be micro usb or similar.
 ### build and upload
 1. Clone the repository
     ```
-    $ git clone https://github.com/takeyamayuki/actuator-server.git
+    $ git clone https://github.com/takeyamayuki/RESTful-servo-motor.git
     ```
 2. Define `ssid`, `password` of your wifi router by creating your own header file.
     ```sh
+    $ cd RESTful-servo-motor
     $ vi src/ssid_define.h
     ``` 
     Add the following statement to ssid_define.h
