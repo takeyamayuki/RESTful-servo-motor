@@ -79,12 +79,12 @@ or you can browse current servo angle by using browser.
 
 http://rsm.local
 
-<img width="792" alt="スクリーンショット 2022-05-18 午後5 19 51" src="https://user-images.githubusercontent.com/22733958/169011735-fc1e0e40-9b51-48f4-82f2-e8c700f44f8a.png">
+<img width="751" alt="スクリーンショット 2022-05-21 午後1 59 16" src="https://user-images.githubusercontent.com/22733958/169636157-6faa444a-d949-414c-90da-792bb149acd0.png">
 
 
 ## connect to homebridge server
 In the homebridge config editor, add the following to the `accessories` section:
-```
+```json
 "accessories": [
     {
         "accessory": "CMD",
