@@ -71,12 +71,11 @@ void handleNotFound(void)
 
 void setup()
 {
-  Serial.begin(9600);
   servo1.setPeriodHertz(50); // Standard 50hz servo
   servo1.attach(servo1Pin, minUs, maxUs);
   flag_check();
   // シリアルコンソールのセットアップ
-  Serial.begin(115200);
+  Serial.begin(9600);
   delay(10);
   Serial.println();
 
