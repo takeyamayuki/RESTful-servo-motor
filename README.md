@@ -43,36 +43,44 @@ Power source should be micro usb or similar.
 
 ### PUT method
 
-`Free angle designation mode` (angle!=0)
+`Free angle mode` (Request body={0~180 arbitrary number})
 
 ```sh
-# a servo motor moves to the angle specified by `angle`
-$ curl {your IP address here} -X PUT -H "Content-Type: text/plain" -d "angle"
+# a servo motor moves to the angle specified by 'angle'
+$ curl {your IP address here} -X PUT -H 'Content-Type: text/plain' -d 'angle'
+
 # e.g.
-$ curl 192.168.0.28 -X PUT -H "Content-Type: text/plain" -d "120"
+$ curl 192.168.0.28 -X PUT -H 'Content-Type: text/plain' -d '120'
+$ curl rsm.local -X PUT -H 'Content-Type: text/plain' -d '120'
+# rsm means RESTful-servo-motor
 ```
 
-`SwitchBot mode` (angle=0)  
+`SwitchBot mode` (Request body='switch')  
 
 ```sh
 # Each time the following command is sent, the servo motor moves back and forth between angle and angle0
-$ curl {your IP address here} -X PUT -H "Content-Type: text/plain" -d "0"
+$ curl {your IP address here} -X PUT -H 'Content-Type: text/plain' -d 'switch'
+
 # e.g.
-$ curl 192.168.0.28 -X PUT -H "Content-Type: text/plain" -d "0"
+$ curl 192.168.0.28 -X PUT -H 'Content-Type: text/plain' -d 'switch'
+$ curl rsm.local -X PUT -H 'Content-Type: text/plain' -d 'switch'
 ```
 
 ### GET method
 
 ```sh
 # Get the current angle.
-$ curl {your IP address here}
+$ curl {your IP address here} -X GET
+# e.g.
+$ curl rsm.local
+$ curl rsm.local -X GET
 ```
 or you can browse current servo angle by using browser.
+
+http://rsm.local
+
 <img width="792" alt="スクリーンショット 2022-05-18 午後5 19 51" src="https://user-images.githubusercontent.com/22733958/169011735-fc1e0e40-9b51-48f4-82f2-e8c700f44f8a.png">
 
-
-
-Writing {your IP address} as `esp32.local` works, but it is slow.
 
 ## connect to homebridge server
 In the homebridge config editor, add the following to the `accessories` section:
@@ -81,8 +89,8 @@ In the homebridge config editor, add the following to the `accessories` section:
     {
         "accessory": "CMD",
         "name": "light",
-        "on_cmd": "curl esp32.local -X PUT -H 'Content-Type: text/plain' -d '0'",
-        "off_cmd": "curl esp32.local -X PUT -H 'Content-Type: text/plain' -d '0'"
+        "on_cmd": "curl rsm.local -X PUT -H 'Content-Type: text/plain' -d 'switch'",
+        "off_cmd": "curl rsm.local -X PUT -H 'Content-Type: text/plain' -d 'switch'"
     }
 ]
 ```
