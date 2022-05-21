@@ -84,7 +84,7 @@ http://rsm.local
 
 ## connect to homebridge server
 In the homebridge config editor, add the following to the `accessories` section:
-```
+```json
 "accessories": [
     {
         "accessory": "CMD",
