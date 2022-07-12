@@ -17,17 +17,19 @@ bool to0_flag = false;
 int angle = 60;
 int angle0 = 5;
 
-const char *ssid = MY_SSID;     // 自分のSSIDに書き換える
+const char *ssid = MY_SSID;          // 自分のSSIDに書き換える
 const char *password = MY_SSID_PASS; // 自分のパスワードに書き換える
-const char *host_name = "rsm"; //RESTful servo motor
-String target = "0"; // この変数をPUTメソッドで書き換える
+const char *host_name = "rsm";       // RESTful servo motor
+String target = "0";                 // この変数をPUTメソッドで書き換える
 
 void flag_check()
 {
   // to0_flag
   int status = servo1.read();
-  if (status > (angle+angle0)/2) to0_flag = true; //現在angle側なので0に持っていく
-  else if (status < (angle+angle0)/2) to0_flag = false; //現在angle0側なので30に持っていく
+  if (status > (angle + angle0) / 2)
+    to0_flag = true; //現在angle側なので0に持っていく
+  else if (status < (angle + angle0) / 2)
+    to0_flag = false; //現在angle0側なので30に持っていく
 }
 
 // mode=true:angle0,angleのスイッチ, mode=false:自由角度への移動
@@ -36,32 +38,33 @@ void move_sg90(bool mode, int k)
   if (mode)
   {
     flag_check();
-    if (to0_flag) servo1.write(angle0);
-    else servo1.write(angle);
+    if (to0_flag)
+      servo1.write(angle0);
+    else
+      servo1.write(angle);
   }
-  else servo1.write(k);
+  else
+    servo1.write(k);
 }
 
 void handleRoot(void)
 {
   // PUT
-  if (server.method() == HTTP_PUT) 
-  { 
+  if (server.method() == HTTP_PUT)
+  {
     target = server.arg("plain"); // server.arg("plain")でリクエストボディが取れる。targetに格納
-    if (target=="switch") move_sg90(true,0);
+    if (target == "switch")
+      move_sg90(true, 0);
     else
-    {
-      int i=target.toInt();
-      move_sg90(false, i);
-    }
-    server.send(200, "text/plain", "Moved servo "+target);   //リクエストされた角度を返す
+      move_sg90(false, target.toInt());
+    server.send(200, "text/plain", "Moved servo " + target); //リクエストされた角度を返す
   }
   // GET
-  else if(server.method() == HTTP_GET)
+  else if (server.method() == HTTP_GET)
   {
     int status = servo1.read();
-    server.send(200, "text/plain", String(status)); // statusをクライアントに返す 
-  } 
+    server.send(200, "text/plain", String(status)); // statusをクライアントに返す
+  }
 }
 
 void handleNotFound(void)
