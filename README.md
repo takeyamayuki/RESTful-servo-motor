@@ -28,7 +28,7 @@ Power source should be micro usb or similar.
     $ cd RESTful-servo-motor
     $ vi src/ssid_define.h
     ``` 
-    Add the following statement to ssid_define.h
+    Change MY_SSID, MY_SSID_PASS to your wifi SSID, password.
     ```cpp
     #ifndef _SSID_DEFINE_
     #define _SSID_DEFINE_
