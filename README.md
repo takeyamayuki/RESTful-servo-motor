@@ -1,5 +1,7 @@
 # RESTful-servo-motor
 
+![restservo-github2](https://user-images.githubusercontent.com/22733958/173193200-6f574ce6-5f60-4b13-a983-5ebaf3758002.gif)
+
 ## parts
 - [MH-ET Live Minikit for ESP32](https://ja.aliexpress.com/item/32815530502.html?spm=a2g0o.order_list.0.0.1b65585aAj7Hnv&gatewayAdapt=glo2jpn) (you need to install driver)  
     Any microcontroller board can be used if it has esp32.
@@ -95,3 +97,6 @@ In the homebridge config editor, add the following to the `accessories` section:
     }
 ]
 ```
+![restservo-github3](https://user-images.githubusercontent.com/22733958/173193531-89778f00-82e1-46e1-8544-b0c455d07dfb.gif)
+
+
