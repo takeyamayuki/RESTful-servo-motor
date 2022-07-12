@@ -37,6 +37,7 @@ Power source should be micro usb or similar.
     #endif
     ```
 3. Change `upload_port`, `monitor_port` in [platformio.ini](platformio.ini) to your own.
+4. Install `ESP32Servo` on PlatformIO
 4. Build and upload using platformIO.
 5. Install this system wherever you like!  
 
