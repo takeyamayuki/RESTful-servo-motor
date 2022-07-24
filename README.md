@@ -39,6 +39,15 @@ Power source should be micro usb or similar.
     #endif
     ```
 3. Change `upload_port`, `monitor_port` in [platformio.ini](platformio.ini) to your own.
+    ```sh
+    $ ls /dev/tty.*
+    /dev/tty.BLTH				/dev/tty.usbmodem529A0097081
+    /dev/tty.Bluetooth-Incoming-Port	/dev/tty.wchusbserial529A0097081
+    ```
+    ```platformio.ini
+    upload_port = /dev/tty.wchusbserial529A0097081
+    monitor_port = /dev/tty.wchusbserial529A0097081
+    ```
 4. Install `ESP32Servo` on PlatformIO
 4. Build and upload using platformIO.
 5. Install this system wherever you like!  
